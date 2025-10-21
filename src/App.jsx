@@ -4,12 +4,12 @@ import './App.css';
 import useAuth from './Hooks/useAuth';
 
 export default function App() {
-  const { googleProvider, facebookProvider, githubProvider, createUser, userSignOut, user } = useAuth();
+  const { googleProvider, facebookProvider, githubProvider,socialProvider, createUser, userSignOut, user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-base-200 flex flex-col space-y-4 p-10 items-center justify-center p-4">
+    <div className="min-h-screen bg-base-200 flex flex-col space-y-4 p-10 items-center justify-center ">
       <h1 className='text-4xl'>{user?.email}</h1>
-      <button className='btn btn-accent'>Sign out</button>
+      <button onClick={userSignOut} className='btn btn-accent'>Sign out</button>
       <div className="hero w-full max-w-3xl rounded-lg shadow-lg bg-base-100">
         <div className="hero-content flex-col w-full p-6">
           {/* Header */}
